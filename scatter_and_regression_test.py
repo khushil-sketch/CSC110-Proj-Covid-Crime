@@ -1,13 +1,3 @@
-"""
-Copyright and Usage Information
-===============================
-
-This file was created for a final project for the University of Toronto Computer Science Course CSC110.
-Any reproduction of this code without permission from the authors is strictly prohibited.
-
-This file is Copyright (c) 2021 Nicholas Poon, Raghav Srinivasan, Khushil Nagda, and Wangzheng Jiang.
-"""
-
 import matplotlib.pyplot as plt
 import numpy as np
 import dataframes as df
