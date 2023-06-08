@@ -3,8 +3,9 @@ import pandas as pd
 import read
 import analyze
 
-COVID_DATA_RAW = read.read_covid_data('data_sets/covid_data.csv')
-POLICE_DATA_RAW = read.read_police_data('data_sets/police_data.csv')
+COVID_DATA_RAW = read.read_covid_data('data_sets\covid_data.csv')
+
+POLICE_DATA_RAW = read.read_police_data('data_sets\police_data.csv')
 
 # Covid Data for Canada for 2020
 covid_data_canada_2020 = analyze.get_covid_data(COVID_DATA_RAW, 'Canada', 2020)
@@ -202,7 +203,7 @@ for pt in read.PROV_AND_TERR:
     df_list_per_province_total_police_data_2021_private.append(total_police_data_2021_private_df)
 
 # ------------------------------  COMBINING THE CANADA COVID DATA FRAME ------------------------- #
-covid_data_canada_20_21_df = covid_data_canada_2020_df.append(covid_data_canada_2021_df)
+covid_data_canada_20_21_df = covid_data_canada_2020_df._append(covid_data_canada_2021_df)
 
 # ------------------------------  COVID DATASET --------------------------------- #
 
@@ -279,34 +280,34 @@ for df in df_list_per_province_total_police_data_2021_private[1:]:
         pd.merge(final_df_list_per_province_total_police_data_2021_private, df, on="Date")
 
 # ------------------------- 2020 AND 2021 CRIME DATA FRAMES COMBINED ---------------------------- #
-total_police_data_canada_20_21_physical_df = total_police_data_canada_2020_physical_df.append(
+total_police_data_canada_20_21_physical_df = total_police_data_canada_2020_physical_df._append(
     total_police_data_canada_2021_physical_df
 )
 
-total_police_data_canada_20_21_non_physical_df = total_police_data_canada_2020_non_physical_df.append(
+total_police_data_canada_20_21_non_physical_df = total_police_data_canada_2020_non_physical_df._append(
     total_police_data_canada_2021_non_physical_df
 )
 
-total_police_data_canada_20_21_public_df = total_police_data_canada_2020_public_df.append(
+total_police_data_canada_20_21_public_df = total_police_data_canada_2020_public_df._append(
     total_police_data_canada_2021_public_df
 )
 
-total_police_data_canada_20_21_private_df = total_police_data_canada_2020_private_df.append(
+total_police_data_canada_20_21_private_df = total_police_data_canada_2020_private_df._append(
     total_police_data_canada_2021_private_df
 )
 
 final_df_per_province_total_police_data_20_21_physical = \
-    final_df_list_per_province_total_police_data_2020_physical.append(
+    final_df_list_per_province_total_police_data_2020_physical._append(
         final_df_list_per_province_total_police_data_2021_physical)
 
 final_df_per_province_total_police_data_20_21_non_physical = \
-    final_df_list_per_province_total_police_data_2020_non_physical.append(
+    final_df_list_per_province_total_police_data_2020_non_physical._append(
         final_df_list_per_province_total_police_data_2021_non_physical)
 
 final_df_per_province_total_police_data_20_21_public = \
-    final_df_list_per_province_total_police_data_2020_public.append(
+    final_df_list_per_province_total_police_data_2020_public._append(
         final_df_list_per_province_total_police_data_2021_public)
 
 final_df_per_province_total_police_data_20_21_private = \
-    final_df_list_per_province_total_police_data_2020_private.append(
+    final_df_list_per_province_total_police_data_2020_private._append(
         final_df_list_per_province_total_police_data_2021_private)
